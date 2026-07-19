@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class QuesPract1 {
     public static boolean isPrime(int num){
         if (num==1 || num==2){
@@ -38,15 +40,39 @@ public class QuesPract1 {
         // }
 
         //Q3 Prime numbers in a range
-        int start=2,end=15;
-        while (start<end) {
-            if (isPrime(start)){
-                System.out.println(start);
+        // int start=2,end=15;
+        // while (start<end) {
+        //     if (isPrime(start)){
+        //         System.out.println(start);
+        //     }
+        //     start++;
+        // }
+
+        //Q4 Number Guessing Game
+        int secretNo=27;
+        boolean isGuess=false;
+        for (int i=0; i<5; i++){
+            System.out.println("Enter your guess No.");
+            Scanner sc = new Scanner(System.in);
+            int guessNo = sc.nextInt();
+            if (guessNo==secretNo){
+                System.out.println("Congratulations! You guessed it.");
+                isGuess=true;
+                break;
             }
-            start++;
+            if (guessNo<secretNo){
+                System.out.println("Too Low");
+            }
+            else{
+                System.out.println("Too High");
+            }
         }
 
-        //Q4 
+        if (!isGuess){
+            System.out.println("Better Luck Next Time!");
+        }
+
+
         //Q5
 
 
