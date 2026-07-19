@@ -15,6 +15,14 @@ public class QuesPract1 {
         return true;
     }
 
+    public static int factorial(int num){
+        int fact=1;
+        for (int i=2; i<=num; i++){
+            fact*=i;
+        }
+        return fact;
+    }
+
     public static void main(){
         System.out.println("Testing.");
 
@@ -49,31 +57,44 @@ public class QuesPract1 {
         // }
 
         //Q4 Number Guessing Game
-        int secretNo=27;
-        boolean isGuess=false;
-        for (int i=0; i<5; i++){
-            System.out.println("Enter your guess No.");
-            Scanner sc = new Scanner(System.in);
-            int guessNo = sc.nextInt();
-            if (guessNo==secretNo){
-                System.out.println("Congratulations! You guessed it.");
-                isGuess=true;
-                break;
-            }
-            if (guessNo<secretNo){
-                System.out.println("Too Low");
-            }
-            else{
-                System.out.println("Too High");
-            }
-        }
+        // int secretNo=27;
+        // boolean isGuess=false;
+        // for (int i=0; i<5; i++){
+        //     System.out.println("Enter your guess No.");
+        //     Scanner sc = new Scanner(System.in);
+        //     int guessNo = sc.nextInt();
+        //     if (guessNo==secretNo){
+        //         System.out.println("Congratulations! You guessed it.");
+        //         isGuess=true;
+        //         break;
+        //     }
+        //     if (guessNo<secretNo){
+        //         System.out.println("Too Low");
+        //     }
+        //     else{
+        //         System.out.println("Too High");
+        //     }
+        // }
 
-        if (!isGuess){
-            System.out.println("Better Luck Next Time!");
-        }
+        // if (!isGuess){
+        //     System.out.println("Better Luck Next Time!");
+        // }
 
 
         //Q5
+        int start=1, end=500;
+        for (int i=start; i<=end; i++){
+            int factoSum=0;
+            int temp=i;
+            while (temp!=0){
+                int digit=temp%10;
+                factoSum+=factorial(digit);
+                temp=temp/10;
+            }
+            if (factoSum==i){
+                System.out.println(i);
+            }
+        }
 
 
         //UCampus Cafeteria Management System Assignment
